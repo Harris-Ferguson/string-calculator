@@ -1,3 +1,4 @@
+from multiprocessing.sharedctypes import Value
 from calculator import StringCalculator
 
 calc = StringCalculator()
@@ -22,3 +23,16 @@ test("1,\n2,4", 7)
 test("//;\n1;3;4", 7)
 test("//$\n1$2$3", 6)
 test("//@\n2@3@8", 13)
+# q4 tests
+try:
+  test("1,-2,4", 0)
+  print("expected a negative error on input 1, 2, 4 and did not get one")
+except ValueError as e:
+  print("expected a negative error on input 1, -2, 4 and got one") 
+  print(e)
+try:
+  test("//;\n-11;-2;-44", 0)
+  print("expected a negative error on input //;-11;-2;-44 and did not get one")
+except ValueError as e:
+  print("expected a negative error on input //;-11;-2;-44 and got one") 
+  print(e)
