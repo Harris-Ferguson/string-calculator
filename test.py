@@ -36,3 +36,11 @@ try:
 except ValueError as e:
   print("expected a negative error on input //;-11;-2;-44 and got one") 
   print(e)
+# q5 tests
+test("2,1001", 2)
+# q6 tests
+test("//***\n1***2***3", 6)
+# q7 tests
+test("//$,@\n1$2@3", 6)
+# q8 tests
+test("//$$$,@@@\n1$$$2@@@3", 6)
